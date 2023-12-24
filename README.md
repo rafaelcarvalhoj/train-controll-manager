@@ -1,0 +1,6 @@
+- Node.js,
+- Express
+- Sequelize
+- Postgres as a Database
+- Docker
+- Docker compose. 
