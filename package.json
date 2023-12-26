@@ -4,13 +4,15 @@
   "description": "- Node.js, - Express - Sequelize - Postgres as a Database - Docker - Docker compose.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "nodemon": "^3.0.2",
     "pg": "^8.11.3",
     "sequelize": "^6.35.2"
   }

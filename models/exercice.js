@@ -1,11 +1,15 @@
-const { Sequelize, DataType } = require('sequelize');
-const db = require('../util/database');
-
-
+const Sequelize = require('sequelize');
+const db = require('../util/database')
 
 const Exercice = db.define('Exercice', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
     name: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true,
         validate: {
@@ -13,7 +17,7 @@ const Exercice = db.define('Exercice', {
         }
     },
     group: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true,
         validate: {
@@ -39,7 +43,7 @@ const Exercice = db.define('Exercice', {
         }
     },
     link: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         validate: {
             notEmpty: true,
             isUrl: true

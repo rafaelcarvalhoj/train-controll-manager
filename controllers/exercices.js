@@ -1,5 +1,10 @@
 const Exercice = require('../models/exercice');
 
+
+exports.test = (req, res, next) => {
+    res.send('Hello World');
+};
+
 //CRUD OPERATIONS
 
 //GET ALL EXERCICES
@@ -40,7 +45,7 @@ exports.getExercices = (req, res, next) => {
 
 //GET EXERCICES BY GROUP
 exports.getExercicesByGroup = (req, res, next) => {
-    const group = req.body.group;
+    const group = req.params.group;
     Exercice.findAll({
         where: {
             group: group,
@@ -57,7 +62,7 @@ exports.getExercicesByGroup = (req, res, next) => {
 
 //GET EXERCICE BY NAME
 exports.getExerciceByName = (req, res, next) => {
-    const exercice = req.body.exercice;
+    const exercice = req.params.exercice;
     Exercive.findOne({
         where: {
             name: exercice,
