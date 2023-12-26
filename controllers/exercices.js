@@ -63,7 +63,7 @@ exports.getExercicesByGroup = (req, res, next) => {
 //GET EXERCICE BY NAME
 exports.getExerciceByName = (req, res, next) => {
     const exercice = req.params.exercice;
-    Exercive.findOne({
+    Exercice.findOne({
         where: {
             name: exercice,
         },

@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-const sequilize = require('./util/database');
+const sequelize = require('./util/database');
 const Exercice  = require('./models/exercice');
 
 const app = express();
@@ -24,10 +24,19 @@ app.use((error, req, res, next) => {
 });
 
 //sync database
-sequilize
-  .sync()
-  .then(result => {
-  console.log("Database connected");
-  app.listen(3000);
-})
-.catch(err => console.log(err));
+async function initialize() {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync();
+    app.listen(3000);
+    console.log('Conexão com o banco de dados estabelecida com sucesso.');
+    console.log('Todos os modelos foram sincronizados com sucesso.');
+    const modelosNoBanco = Object.keys(sequelize.models);
+    console.log('Modelos no banco de dados:', modelosNoBanco);
+    console.log('Aplicação rodando na porta 3000');
+  } catch (error) {
+    console.error('Erro ao conectar ao banco de dados:', error);
+  }
+}
+
+initialize();

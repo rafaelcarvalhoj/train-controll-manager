@@ -19,7 +19,6 @@ const Exercice = db.define('Exercice', {
     group: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
         validate: {
             notEmpty: true,
             isIn: {
