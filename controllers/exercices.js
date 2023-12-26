@@ -62,7 +62,7 @@ exports.getExercicesByGroup = (req, res, next) => {
 
 //GET EXERCICE BY NAME
 exports.getExerciceByName = (req, res, next) => {
-    const exercice = req.params.exercice;
+    const exercice = req.params.name;
     Exercice.findOne({
         where: {
             name: exercice,
@@ -128,7 +128,7 @@ exports.updateExerciceLink = (req, res, next) => {
 
 //UPDATE EXERCICE NAME
 exports.updateExerciceName = (req, res, next) => {
-    const name = req.body.name;
+    const name = req.params.name;
     const group = req.body.group;
     const updatedName = req.body.updatedName;
     Exercice.findOne({
