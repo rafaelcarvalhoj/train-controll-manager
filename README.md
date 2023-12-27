@@ -1,4 +1,4 @@
-# Workout Set Database- Backend Application
+# Workout Set Database - Backend Application
 
 ## Run locally
 ### Clone the project:
