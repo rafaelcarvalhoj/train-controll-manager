@@ -1,4 +1,4 @@
-- Node.js,
+- Node.js
 - Express
 - Sequelize
 - Postgres as a Database
